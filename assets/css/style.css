@@ -1,7 +1,100 @@
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);@charset "UTF-8";
 /* sass variables*/
 /* sass mixins.*/
+@font-face {
+  font-family: "fontello";
+  src: url(/fonts/fontello.eot);
+  src: url(/fonts/fontello.eot#iefix) format("embedded-opentype"), url(/fonts/fontello.woff2) format("woff2"), url(/fonts/fontello.woff) format("woff"), url(/fonts/fontello.ttf) format("truetype"), url(/fonts/fontello.svg#fontello) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/**
+  * position: before | after | both
+ */
 /* typography */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-location:before {
+  content: '\E800'; }
+
+/* '' */
+.icon-phone:before {
+  content: '\E801'; }
+
+/* '' */
+.icon-mail:before {
+  content: '\E802'; }
+
+/* '' */
+.icon-gplus:before {
+  content: '\F05A'; }
+
+/* '' */
+.icon-facebook:before {
+  content: '\F09A'; }
+
+/* '' */
+.icon-linkedin:before {
+  content: '\F0E1'; }
+
+/* '' */
+.icon-dribbble:before {
+  content: '\F17D'; }
+
+/* '' */
+.icon-pinterest:before {
+  content: '\F231'; }
+
+/* '' */
+.icon-twitter:before {
+  content: '\F309'; }
+
+/* '' */
+.font-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  /* font-size: 120%; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
 /* base styles */
 * {
   margin: 0;
@@ -11,7 +104,9 @@
 body {
   min-width: 240px;
   color: #000000;
-  height: 100vh; }
+  height: 100vh;
+  font-size: 1.67vw;
+  line-height: 1.5; }
 
 a,
 button:hover {
@@ -93,6 +188,8 @@ footer {
         text-decoration: none;
         outline: none;
         font-weight: bold; }
+        .header .container .logo a .headerlogo__link--color {
+          color: #5b4295; }
     .header .container .content {
       padding: 130px 0 145px;
       text-align: center;
@@ -121,7 +218,7 @@ footer {
         .header .container .content button[type="button"]:nth-of-type(2) {
           margin: 0 5px; }
         .header .container .content button[type="button"].small {
-          padding: 0 22px;
+          padding: 0 17px;
           border-radius: 100%; }
       .header .container .content .сreateacc {
         padding: 0px 75px; }
@@ -174,7 +271,7 @@ footer {
       -moz-outline: none;
       -webkit-outline: none; }
     .header .container .active {
-      color: #5c359d; }
+      font-weight: bold; }
     .header .container .lang__link:hover {
       border-bottom: 1px solid #454545; }
   .header .social {
@@ -253,9 +350,8 @@ main .container {
 .valuestext__content {
   padding-left: 30%;
   font-size: 22px; }
-
-.valuestext span {
-  color: #f65151; }
+  .valuestext__content span {
+    color: #fc2028; }
 
 .item-button {
   grid-column: 2/span 2; }
@@ -263,11 +359,12 @@ main .container {
 .item-button::before {
   content: "";
   position: absolute;
-  top: 98.5%;
+  top: 98.1%;
   left: 0;
   width: 54.7%;
   height: 1px;
-  background-color: #b9b9b9; }
+  background-color: #b9b9b9;
+  z-index: -1; }
 
 .item-button a {
   padding: 15px 30px;
@@ -276,31 +373,150 @@ main .container {
   font-size: 16px;
   color: #676766;
   text-decoration: none;
-  outline: none; }
+  outline: none;
+  background-color: #ffffff; }
 
 .companies .companies__content {
   padding: 20px 0; }
 
 .testimonials {
-  background: linear-gradient(to right bottom, #ffffff 40%, #f6f6f6 60%); }
-  .testimonials .container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px;
-    grid-template-areas: "lp lp" "rp rp"; }
-  .testimonials .left-part {
-    grid-area: lp; }
-    .testimonials .left-part ul {
-      float: left; }
-    .testimonials .left-part .pin {
-      width: 11px;
-      height: 11px;
-      display: inline-flex;
-      background-color: #b7b7b7;
-      border-radius: 100%; }
-      .testimonials .left-part .pin--active {
-        background-color: #101010; }
-  .testimonials .img {
-    grid-area: rp;
-    grid-column: 2; }
+  background: linear-gradient(to right bottom, #ffffff 40%, #f6f6f6 60%);
+  display: grid;
+  grid-template-columns: 0.675fr 1.19fr 1.17fr;
+  grid-template-rows: 1fr 1.15fr 19px;
+  height: 39.2vw; }
+  .testimonials .dots ul {
+    display: block;
+    float: right;
+    margin-top: 3.1vw;
+    margin-right: 1.1vw;
+    list-style-type: none;
+    padding: 0;
+    text-align: center; }
+    .testimonials .dots ul li {
+      font-size: 1.4rem;
+      margin: 0;
+      padding: 0;
+      line-height: 0.7rem;
+      color: #b7b7b7; }
+  .testimonials .quote {
+    color: #101010;
+    font-family: 'OTCE Malaga';
+    padding-top: 1.55vw;
+    grid-column-start: 2; }
+  .testimonials .proposition {
+    position: relative;
+    grid-column: 2;
+    text-align: right;
+    font-family: "Titillium Web"; }
+    .testimonials .proposition p {
+      font-size: 1rem;
+      line-height: 1.35; }
+    .testimonials .proposition .buttons {
+      display: flex;
+      justify-content: flex-end; }
+      .testimonials .proposition .buttons .btn {
+        margin: 0 5px; }
+    .testimonials .proposition .notebook {
+      position: absolute;
+      top: -265px;
+      right: -397px; }
+
+.privacy {
+  text-align: center; }
+  .privacy h3 {
+    font-weight: 400;
+    font-size: 1.22rem;
+    color: #535353;
+    margin-top: 3.05vw;
+    margin-bottom: 0; }
+  .privacy .buttons {
+    display: flex;
+    justify-content: center; }
+    .privacy .buttons .btn {
+      background-image: linear-gradient(90deg, #646c92, #5f2e69);
+      border-width: 0;
+      border-radius: 50px;
+      margin-left: 0;
+      margin-right: 2.88vw;
+      box-shadow: 0 5px 15px #6276cd;
+      transition: box-shadow 0.5s; }
+      .privacy .buttons .btn:not(:first-child) {
+        background-image: linear-gradient(90deg, #35bbe0, #5e7bea); }
+      .privacy .buttons .btn a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px 10px 15px; }
 
 /* footer block */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 2.77vw 4.44vw 0.70fr 1fr 0.6fr;
+  margin-top: 4.55vw; }
+  .footer .sponsors {
+    grid-area: 1 / 3 / 4 / 8;
+    padding-right: 1.5vw;
+    border-right: 1px solid #b9b9b9;
+    border-top: 1px solid #b9b9b9; }
+    .footer .sponsors h4 {
+      font-family: "Titillium Web";
+      font-size: 0.47rem;
+      font-weight: 400;
+      color: #7a7a7a;
+      text-align: right;
+      margin-bottom: 1px;
+      margin-top: 1vw; }
+  .footer .contacts {
+    grid-area: 4 / 2 / 4 / 4;
+    padding-top: 2%; }
+    .footer .contacts p {
+      font-family: "Titillium Web";
+      font-size: 10px;
+      color: #5c5c5c;
+      margin-bottom: 0; }
+    .footer .contacts a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #5c5c5c; }
+    .footer .contacts .bporder-left {
+      border-left: 1px solid #b9b9b9;
+      padding-left: 10px;
+      box-sizing: content-box; }
+  .footer .footer-menu {
+    font-family: "Titillium Web";
+    direction: rtl;
+    font-size: 12px; }
+    .footer .footer-menu h4 {
+      direction: rtl;
+      font-size: 14px;
+      margin: 20px 25px 0 0;
+      color: #5c5c5c; }
+    .footer .footer-menu a {
+      text-decoration: none;
+      color: #5c5c5c; }
+    .footer .footer-menu ul {
+      line-height: 1.55;
+      margin-top: 27px;
+      list-style: disc; }
+      .footer .footer-menu ul li {
+        color: #5c5c5c; }
+    .footer .footer-menu.legal-menu {
+      grid-area: 4 / 6 / 4 / 6; }
+    .footer .footer-menu.neutronmail-menu {
+      grid-area: 4 / 7 / 4 / 7;
+      border-right: 1px solid #b9b9b9;
+      padding-right: 10px; }
+      .footer .footer-menu.neutronmail-menu ul {
+        padding-right: 18px; }
+    .footer .footer-menu.social-networks-menu {
+      grid-area: 5 / 2 / 5 / 8;
+      direction: ltr;
+      font-size: 12px;
+      align-self: end; }
+    .footer .footer-menu.company-menu {
+      grid-area: 4 / 5 / 6 / 5;
+      padding-right: 27%; }
+  .footer .border-right {
+    border-right: 1px solid #b9b9b9; }
