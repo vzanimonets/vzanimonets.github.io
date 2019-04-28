@@ -14,7 +14,9 @@
     <header class="header">
       <div class="container">
         <div class="logo">
-          <a href="#">neutron<span class="headerlogo__link--color">Mail</span></a>
+          <a class="logo_link" href="#">
+            neutron<span class="logo__link--color">Mail</span>
+          </a>
         </div>
         <div class="topmenu">
           <menu>
@@ -42,7 +44,7 @@
         </div>
         <div class="content">
           <h1 class="content__title">Secure Email Communication</h1>
-          <p class="content__text">Based in <span>Somewhere</span></p>
+          <spaN class="content__text">Based in <span>Somewhere</span></spaN>
           <button class="сreateacc" type="button">Create account</button>
           <button class="small" type="button">
             <span class="font-icon icon-apple"></span>
@@ -129,34 +131,40 @@
         </div>
       </div>
       <section class="testimonials">
-        <div class="dots">
-          <ul>
-            <li>•</li>
-            <li>•</li>
-            <li>•</li>
-          </ul>
-        </div>
-        <div class="quote">
-          <p>A new email service being developed by a group<br> from MIT and CERN promises to bring secure,<br>
-            encrypted email to the masses and keep sensitive<br> information away from prying eyes.<br></p>
-          <span>— Boston Herald</span>
-        </div>
-        <div class="proposition">
-          <h3>Any device, anywhere</h3>
-          <p>The NeutronMail inbox is optimized for productivity. Each detail <br>within our secure email service is
-            optimized to help you better<br> read, organize, and send email.</p>
-          <div class="buttons">
-            <div class="btn">
-              <a href="#" title="Download on the Google play"><img src="./assets/images/btn-google.png"
-                  alt="Download on the Google play"></a>
-            </div>
-            <div class="btn">
-              <a href="#" title="Download on the Apple store"><img src="./assets/images/btn-appstore.png"
-                  alt="Download on the Apple store"></a>
-            </div>
+        <div class="container">
+          <div class="dots">
+            <ul>
+              <li class="dots_point--active"></li>
+              <li class="dots_point"></li>
+              <li class="dots_point"></li>
+              <li class="dots_point"></li>
+            </ul>
           </div>
-
-          <img class="notebook" src="./assets/images/notebookimg.png" alt="notebook ">
+          <div class="quote">
+            <p>A new email service being developed by a group<br> from MIT and CERN promises to bring secure,<br>
+              encrypted email to the masses and keep sensitive<br> information away from prying eyes.<br></p>
+            <span>— Boston Herald</span>
+          </div>
+          <div class="proposition">
+            <h3>Any device, anywhere</h3>
+            <p>The NeutronMail inbox is optimized for productivity. Each detail <br>within our secure email service is
+              optimized to help you better<br> read, organize, and send email.</p>
+            <div class="buttons">
+              <div class="btn">
+                <a href="#" title="Download on the Google play"><img src="./assets/images/btn-google.png"
+                    alt="Download on the Google play"></a>
+              </div>
+              <div class="btn">
+                <a href="#" title="Download on the Apple store"><img src="./assets/images/btn-appstore.png"
+                    alt="Download on the Apple store"></a>
+              </div>
+            </div>
+            <picture class="notebook">
+              <!-- <source srcset="" media="(max-width: 1024px)"> -->
+              <img src="./assets/images/notebookimg.png" alt="MDN">
+            </picture>
+            <!-- <img class="notebook" src="./assets/images/notebookimg.png" alt="notebook "> -->
+          </div>
         </div>
       </section>
       <section class="privacy">
